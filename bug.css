@@ -1,0 +1,19 @@
+The following CSS code snippet demonstrates an uncommon error related to the specificity of CSS selectors:
+
+```css
+.container {
+  width: 500px;
+}
+
+#container {
+  width: 600px;
+}
+
+.container #container {
+  width: 700px;
+}
+
+<div class="container" id="container"></div>
+```
+
+This code is designed to showcase the specificity rules in CSS. The `<div>` element has both the class `container` and the ID `container` .  Normally, the ID selector (`#container`) has higher specificity than the class selector (`.container`).  However, the third rule (`.container #container`) is surprisingly specific because of the combinator.
